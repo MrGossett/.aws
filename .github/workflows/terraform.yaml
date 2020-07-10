@@ -71,7 +71,7 @@ jobs:
         run: terraform plan -no-color
 
       - name: 'Pull Request Comment'
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v2
         if: github.event_name == 'pull_request'
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
