@@ -1,5 +1,6 @@
 resource "aws_organizations_organization" "org" {
-  feature_set = "ALL"
+  feature_set          = "ALL"
+  enabled_policy_types = ["AISERVICES_OPT_OUT_POLICY"]
 }
 
 resource "aws_organizations_policy" "ai_opt_out" {
