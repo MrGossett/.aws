@@ -1,5 +1,9 @@
 resource "aws_organizations_organization" "org" {
   feature_set = "ALL"
+
+  lifecycle {
+    ignore_changes = [enabled_policy_types]
+  }
 }
 
 resource "aws_organizations_policy" "ai_opt_out" {
