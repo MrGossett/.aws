@@ -41,7 +41,7 @@ jobs:
           echo "::set-output name=table::${table}"
 
       - name: 'Install Terraform'
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v1.3.1
 
       - name: 'Prefix ENV'
         run: |
