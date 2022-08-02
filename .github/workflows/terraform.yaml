@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-    paths: 
+    paths:
       - 'tf/**'
   pull_request:
 
@@ -46,7 +46,7 @@ jobs:
       - name: 'Prefix ENV'
         run: |
           for key in $(env | grep GITHUB_ | cut -d= -f1); do
-            echo "::set-env name=TF_VAR_${key,,}::${!key}"
+            echo "TF_VAR_${key,,}=${!key}" >> $GITHUB_ENV
           done
 
       - name: 'Terraform Init'
