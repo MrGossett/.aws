@@ -15,7 +15,6 @@ provider "aws" {
 resource "aws_s3_bucket" "indigo_tfstate" {
   provider = aws.indigo
   bucket   = "terraform-state-${aws_organizations_account.indigo.id}"
-  acl      = "private"
   tags     = local.tags
 }
 
