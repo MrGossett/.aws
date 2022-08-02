@@ -1,4 +1,14 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+
+  backend "s3" {}
+}
+
 provider "aws" {
-  version = "~> 2.41"
-  region  = var.aws_region
+  region = var.aws_region
 }

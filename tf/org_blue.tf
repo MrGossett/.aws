@@ -6,7 +6,6 @@ resource "aws_organizations_account" "blue" {
 
 resource "aws_s3_bucket" "blue_tfstate" {
   bucket = "terraform-state-${aws_organizations_account.blue.id}"
-  acl    = "private"
   tags   = local.tags
 }
 
